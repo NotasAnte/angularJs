@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -a localhost -p 8000 -c-1 ./app"
   },
-  "author": "https://www.youtube.com/watch?v=AB56yuhXg1w#t=13.847738",
+  "author": "Alberto Antequera Rubiales",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.2",
