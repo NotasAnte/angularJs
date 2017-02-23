@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Angularjs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-controller="AppController">
+
+	<div class="jumbotron">
+		<h1 class="display-3">{{ "Hola " + nombre }}</h1>
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequatur nihil, corporis quaerat natus minus molestiae enim accusamus possimus laboriosam! Rem veniam, ut inventore eveniet nostrum, repudiandae voluptatibus officiis hic.</p>
+		<hr class="my-4">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quae corporis, vitae quo accusamus natus a explicabo tempora et quam at delectus, est voluptate debitis quos rem quidem eius repudiandae?</p>
+
+		<!-- databinding -->
+		<input type="text" class="form-control" name="nombre" ng-model="nombre" >
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-3">
+				<div class="form-group">
+					<label for="username">Usuario</label>
+					<input type="text" class="form-control" id="username" placeholder="Usuario" autocomplete="off" name="username" ng-model="nuevoComentario.username">
+				</div>
+				<div class="form-group">
+					<label for="mensaje">Comentario</label>
+					<input type="text" class="form-control" id="mensaje" placeholder="Comentario" autocomplete="off" name="mensaje" ng-model="nuevoComentario.mensaje">
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-outline-primary btn-block" ng-click="agragarComentario()">
+						Enviar
+					</button>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-9" >
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-3" ng-repeat="comentario in comentarios">
+						<div class="card card-outline-success mb-2">
+							<div class="card-block">
+								<blockquote class="card-blockquote">
+									<button type="button" class="close" aria-label="Close" id="{{comentario.id}}" ng-click="eliminarComentario(comentario.id)">
+									  <span aria-hidden="true">&times;</span>
+									</button>
+									<p>{{comentario.username}}</p>
+									<footer class="text-center">{{comentario.mensaje}} <cite title="Source Title"></cite></footer>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="list-group">
+					<li class="list-group-item active">Post</li>
+					<li class="list-group-item" ng-repeat="post in posts">{{post.body}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

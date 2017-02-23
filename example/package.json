@@ -1,0 +1,16 @@
+{
+  "name": "angu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 8000 -c-1 ./app"
+  },
+  "author": "https://www.youtube.com/watch?v=AB56yuhXg1w#t=13.847738",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "http-server": "^0.9.0"
+  }
+}
